@@ -3,13 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>마토공방 - 프리미엄 수제 쿠키</title>
-  <meta name="description" content="매일 아침 구워 당일 배송합니다. 프랑스산 발효버터와 유기농 재료로 정성을 다해 굽는 마토공방의 수제 쿠키 베이커리입니다." />
-  <meta property="og:title" content="마토공방 - 프리미엄 수제 쿠키" />
-  <meta property="og:description" content="매일 아침 구워 당일 배송합니다. 마토공방 수제 쿠키" />
+  <title>마토공방</title>
+  <meta name="description" content="매일 아침 구워 당일 배송합니다" />
+
+  <!-- SNS & KakaoTalk Open Graph Meta Tags -->
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="./images/fullwidth_hero.jpg" />
+  <meta property="og:site_name" content="마토공방" />
+  <meta property="og:title" content="마토공방" />
+  <meta property="og:description" content="매일 아침 구워 당일 배송합니다" />
+  <meta property="og:url" content="https://jumpinghj88-cmyk.github.io/mato-bakery/" />
+  <!-- TODO: 카카오톡 및 SNS 공유 시 표시될 대표 이미지의 전체 URL(https://...)을 아래 content="" 안에 입력해 주세요 -->
+  <!-- 예시: content="https://jumpinghj88-cmyk.github.io/mato-bakery/images/fullwidth_hero.jpg" -->
+  <meta property="og:image" content="" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="마토공방 - 매일 아침 구워 당일 배송하는 프리미엄 수제 쿠키" />
+
+  <!-- Twitter Card Meta Tags -->
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="마토공방" />
+  <meta name="twitter:description" content="매일 아침 구워 당일 배송합니다" />
+  <!-- TODO: 트위터 공유용 대표 이미지 전체 URL(https://...) 입력 -->
+  <meta name="twitter:image" content="" />
 
   <!-- Google Fonts: Gowun Dodum (고운 돋움), Gowun Batang (고운 바탕) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -101,7 +116,7 @@
       font-variant-numeric: tabular-nums;
     }
 
-    /* Top Announcement Bar */
+    /* Top Announcement Bar with Mascot peek */
     .announcement-bar {
       background-color: #2D201A;
       color: #EFE4D8;
@@ -211,7 +226,7 @@
       flex-shrink: 0;
     }
 
-    /* Buttons */
+    /* Common Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -450,7 +465,7 @@
       color: var(--accent-caramel);
     }
 
-    /* 2. Products Section (Hover Lift Effect) */
+    /* 2. Products Section (Cards with Smooth Mouse Hover Lift Effect) */
     .products-section {
       padding: 40px 0 84px;
       background-color: var(--bg-canvas);
@@ -505,6 +520,7 @@
       cursor: pointer;
     }
 
+    /* HOVER EFFECT: 카드 마우스 오버 시 위로 8px 올라오는 효과 */
     .product-card:hover {
       transform: translateY(-8px);
       box-shadow: var(--shadow-hover);
@@ -528,6 +544,7 @@
       transform: scale(1.06);
     }
 
+    /* Character Mini Stamp on cards */
     .card-mascot-stamp {
       position: absolute;
       top: 14px;
@@ -890,7 +907,7 @@
       margin-bottom: 22px;
     }
 
-    /* 6. Footer */
+    /* 6. Footer (Operating Hours, Contacts, Instagram) */
     .site-footer {
       background-color: #241A15;
       color: #B5A497;
@@ -1188,6 +1205,7 @@
   <!-- Header Navigation -->
   <header class="site-header">
     <div class="container nav-inner">
+      <!-- Zone 1: Brand Wordmark with Cute Mascot -->
       <a href="#hero-banner" class="brand-logo" title="마토공방 홈으로 이동">
         <div class="mascot-avatar-small">
           <img src="./images/mato_character.jpg" alt="마토공방 빵 캐릭터 마토" />
@@ -1198,6 +1216,7 @@
         </div>
       </a>
 
+      <!-- Zone 2: Navigation Links -->
       <nav class="nav-menu" aria-label="메인 메뉴">
         <a href="#hero-banner" class="nav-link">홈</a>
         <a href="#products" class="nav-link">대표 쿠키</a>
@@ -1206,6 +1225,7 @@
         <a href="#store-info" class="nav-link">매장 & 연락처</a>
       </nav>
 
+      <!-- Zone 3: Primary Action -->
       <div class="header-cta-group">
         <button type="button" onclick="openKakaoOrderModal()" class="btn btn-kakao" title="카카오톡 채널로 주문하기">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
@@ -1228,11 +1248,13 @@
     <div class="fullwidth-hero-overlay"></div>
 
     <div class="fullwidth-hero-container">
+      <!-- Mascot Greeting Pill -->
       <div class="hero-mascot-pill">
         <img src="./images/mato_character.jpg" alt="마토 셰프 캐릭터" />
         <span>마토 셰프가 오늘 아침 오븐을 활짝 열었어요!</span>
       </div>
 
+      <!-- Prominent Full-Width Headline -->
       <h1 class="fullwidth-hero-title">
         매일 아침 구워 <mark>당일 배송</mark>합니다
       </h1>
@@ -1256,6 +1278,7 @@
         </button>
       </div>
 
+      <!-- Trust Strip -->
       <div class="hero-trust-strip">
         <div class="trust-strip-item">
           <span>📦</span>
@@ -1294,7 +1317,7 @@
     </div>
   </section>
 
-  <!-- Products Section: 3 Cookie Cards with Hover Lift -->
+  <!-- Products Section: 3 Cookie Cards with Hover Lift Effect -->
   <section id="products" class="products-section">
     <div class="container">
       <div class="section-header">
@@ -1450,7 +1473,7 @@
     </div>
   </section>
 
-  <!-- Live Order Basket & Total Calculator -->
+  <!-- Live Order Basket & Total Calculator with Mascot -->
   <section class="quick-order-section">
     <div class="container">
       <div class="order-summary-box">
