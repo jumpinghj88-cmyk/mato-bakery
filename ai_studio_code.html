@@ -1,0 +1,1879 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>마토공방 - 프리미엄 수제 쿠키</title>
+  <meta name="description" content="매일 아침 구워 당일 배송합니다. 프랑스산 발효버터와 유기농 재료로 정성을 다해 굽는 마토공방의 수제 쿠키 베이커리입니다." />
+  <meta property="og:title" content="마토공방 - 프리미엄 수제 쿠키" />
+  <meta property="og:description" content="매일 아침 구워 당일 배송합니다. 마토공방 수제 쿠키" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="./images/fullwidth_hero.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Google Fonts: Gowun Dodum (고운 돋움), Gowun Batang (고운 바탕) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Gowun+Dodum&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* CSS Variables & Soft Bakery Palette */
+    :root {
+      --bg-canvas: #FAF6F0;
+      --bg-cream: #F5EFE6;
+      --bg-warm-card: #FFFFFF;
+      --text-main: #33241C;
+      --text-body: #5E4B3E;
+      --text-muted: #8E7B6E;
+      --border-subtle: #ECE1D4;
+      --border-warm: #DFD0BF;
+      --accent-caramel: #B86B27;
+      --accent-caramel-hover: #9B5619;
+      --accent-honey: #E09638;
+      --accent-butter: #FFF2D6;
+      --kakao-yellow: #FEE500;
+      --kakao-text: #191919;
+      --shadow-sm: 0 3px 12px rgba(60, 40, 25, 0.04);
+      --shadow-hover: 0 16px 32px rgba(60, 40, 25, 0.12);
+      --shadow-lg: 0 20px 40px rgba(45, 30, 20, 0.15);
+      --radius-sm: 10px;
+      --radius-md: 18px;
+      --radius-lg: 26px;
+      --radius-pill: 9999px;
+      --font-soft: 'Gowun Dodum', 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-title: 'Gowun Batang', Georgia, serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-canvas);
+      color: var(--text-main);
+      font-family: var(--font-soft);
+      -webkit-font-smoothing: antialiased;
+      line-height: 1.65;
+    }
+
+    body {
+      background-color: var(--bg-canvas);
+      color: var(--text-body);
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-family: var(--font-soft);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      background: none;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .tabular-nums {
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Top Announcement Bar */
+    .announcement-bar {
+      background-color: #2D201A;
+      color: #EFE4D8;
+      font-size: 13px;
+      padding: 10px 16px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .announcement-badge {
+      background: #FEE500;
+      color: #191919;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: var(--radius-pill);
+    }
+
+    /* Header Navigation */
+    .site-header {
+      background-color: rgba(250, 246, 240, 0.94);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 78px;
+      gap: 32px;
+    }
+
+    /* Brand Logo with Cute Mascot */
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .mascot-avatar-small {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 2px solid var(--border-warm);
+      overflow: hidden;
+      background-color: #FFF;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+    .brand-logo:hover .mascot-avatar-small {
+      transform: rotate(-6deg) scale(1.08);
+    }
+    .mascot-avatar-small img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .brand-text-col {
+      display: flex;
+      flex-direction: column;
+    }
+    .brand-title {
+      font-family: var(--font-title);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+    .brand-tagline-sub {
+      font-size: 11px;
+      color: var(--accent-caramel);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      margin-top: 2px;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-link {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-body);
+      white-space: nowrap;
+      position: relative;
+      padding: 6px 0;
+    }
+    .nav-link:hover {
+      color: var(--accent-caramel);
+    }
+
+    .header-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 24px;
+      font-size: 15px;
+      font-weight: 600;
+      border-radius: var(--radius-pill);
+      white-space: nowrap;
+      flex-shrink: 0;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-kakao {
+      background-color: var(--kakao-yellow);
+      color: var(--kakao-text);
+      box-shadow: 0 4px 12px rgba(254, 229, 0, 0.35);
+    }
+    .btn-kakao:hover {
+      background-color: #F8DC00;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(254, 229, 0, 0.45);
+    }
+    .btn-white {
+      background-color: #FFFFFF;
+      color: var(--text-main);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    }
+    .btn-white:hover {
+      background-color: #FFF6EE;
+      transform: translateY(-2px);
+      color: var(--accent-caramel);
+    }
+    .btn-outline {
+      background-color: rgba(255, 255, 255, 0.85);
+      color: var(--text-main);
+      border: 1px solid var(--border-warm);
+    }
+    .btn-outline:hover {
+      background-color: #FFF;
+      border-color: var(--accent-caramel);
+      color: var(--accent-caramel);
+    }
+
+    /* 1. Full-Width Hero Section */
+    .fullwidth-hero {
+      position: relative;
+      width: 100%;
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #2D201A;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .fullwidth-hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: brightness(0.65) saturate(1.1);
+      transform: scale(1.02);
+      transition: transform 1.2s ease;
+    }
+    .fullwidth-hero:hover .fullwidth-hero-bg {
+      transform: scale(1.04);
+    }
+    .fullwidth-hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at center, rgba(35, 24, 18, 0.4) 0%, rgba(25, 17, 13, 0.82) 100%);
+    }
+
+    .fullwidth-hero-container {
+      position: relative;
+      z-index: 2;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 70px 24px;
+      text-align: center;
+      color: #FFF;
+    }
+
+    /* Floating Mascot Hero Badge */
+    .hero-mascot-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(10px);
+      padding: 6px 18px 6px 8px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      margin-bottom: 22px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    }
+    .hero-mascot-pill img {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #FFF;
+      object-fit: cover;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+    .hero-mascot-pill span {
+      font-size: 14px;
+      font-weight: 500;
+      color: #FFECC7;
+      letter-spacing: -0.01em;
+    }
+
+    .fullwidth-hero-title {
+      font-family: var(--font-title);
+      font-size: clamp(34px, 5.2vw, 56px);
+      font-weight: 700;
+      line-height: 1.25;
+      color: #FFFFFF;
+      text-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+      margin-bottom: 18px;
+      letter-spacing: -0.02em;
+    }
+    .fullwidth-hero-title mark {
+      background: none;
+      color: #FFDE7D;
+      text-decoration: underline;
+      text-decoration-color: rgba(255, 222, 125, 0.5);
+      text-underline-offset: 8px;
+    }
+    .fullwidth-hero-sub {
+      font-size: clamp(16px, 2vw, 19px);
+      color: #F2E3D5;
+      max-width: 680px;
+      margin: 0 auto 32px;
+      line-height: 1.7;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+    .hero-action-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .hero-trust-strip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      font-size: 14px;
+      color: #E2CEBD;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 24px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .trust-strip-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Brand Intro Section */
+    .brand-intro-section {
+      padding: 72px 0 60px;
+      background-color: var(--bg-canvas);
+    }
+    .intro-card {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-subtle);
+      padding: 48px;
+      box-shadow: var(--shadow-sm);
+      display: grid;
+      grid-template-columns: 1fr 140px;
+      gap: 32px;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .intro-kicker {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent-caramel);
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+    .intro-title {
+      font-family: var(--font-title);
+      font-size: clamp(24px, 3vw, 32px);
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 14px;
+      line-height: 1.35;
+    }
+    .intro-text {
+      font-size: 16px;
+      color: var(--text-body);
+      line-height: 1.75;
+      max-width: 680px;
+    }
+    .intro-mascot-spot {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .intro-mascot-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 8px 24px rgba(60, 40, 25, 0.12);
+      border: 3px solid #FFF;
+      background: #FFF;
+      animation: gentleBounce 3s ease-in-out infinite;
+    }
+    @keyframes gentleBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .intro-mascot-label {
+      margin-top: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent-caramel);
+    }
+
+    /* 2. Products Section (Hover Lift Effect) */
+    .products-section {
+      padding: 40px 0 84px;
+      background-color: var(--bg-canvas);
+    }
+    .section-header {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 52px;
+      position: relative;
+    }
+    .section-kicker {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent-caramel);
+      margin-bottom: 8px;
+    }
+    .section-title {
+      font-family: var(--font-title);
+      font-size: clamp(28px, 3.5vw, 38px);
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+    .section-desc {
+      font-size: 16px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    /* Product Card with Smooth Hover Elevation & Zoom */
+    .product-card {
+      background-color: var(--bg-warm-card);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                  box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                  border-color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent-honey);
+    }
+
+    .card-media-wrapper {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      background-color: #F5EFE6;
+    }
+    .card-media-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .product-card:hover .card-media-wrapper img {
+      transform: scale(1.06);
+    }
+
+    .card-mascot-stamp {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: var(--radius-pill);
+      padding: 4px 10px 4px 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-main);
+      z-index: 2;
+    }
+    .card-mascot-stamp img {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .card-flavor-tag {
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      background: rgba(45, 32, 26, 0.82);
+      backdrop-filter: blur(6px);
+      color: #FFF6EE;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      letter-spacing: 0.02em;
+    }
+
+    .card-body {
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+    .card-sub-category {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent-caramel);
+      margin-bottom: 6px;
+    }
+    .card-title-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .card-title {
+      font-family: var(--font-title);
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.25;
+    }
+    .card-price {
+      font-family: var(--font-soft);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--accent-caramel);
+      white-space: nowrap;
+    }
+    .card-price small {
+      font-size: 14px;
+      color: var(--text-body);
+      font-weight: 500;
+    }
+    .card-desc {
+      font-size: 15px;
+      color: var(--text-body);
+      line-height: 1.65;
+      margin-bottom: 18px;
+    }
+
+    .card-ingredients {
+      padding: 12px 14px;
+      background-color: var(--bg-cream);
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+      border: 1px dashed var(--border-warm);
+      line-height: 1.5;
+    }
+    .card-ingredients strong {
+      color: var(--text-main);
+      font-weight: 600;
+    }
+
+    .card-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: auto;
+    }
+    .qty-control {
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid var(--border-warm);
+      border-radius: var(--radius-pill);
+      background: #FFF;
+      height: 42px;
+      padding: 0 4px;
+    }
+    .qty-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text-body);
+      user-select: none;
+    }
+    .qty-btn:hover {
+      background-color: var(--bg-cream);
+      color: var(--text-main);
+    }
+    .qty-value {
+      width: 30px;
+      text-align: center;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .btn-card-order {
+      flex-grow: 1;
+      height: 42px;
+      padding: 0 16px;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: var(--radius-pill);
+      background-color: var(--text-main);
+      color: #FFF;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    }
+    .btn-card-order:hover {
+      background-color: var(--accent-caramel);
+      transform: translateY(-1px);
+    }
+
+    /* 3. Live Order Summary Box with Mascot */
+    .quick-order-section {
+      padding: 24px 0 64px;
+      background-color: var(--bg-canvas);
+    }
+    .order-summary-box {
+      background-color: #FFF;
+      border: 1px solid var(--border-warm);
+      border-radius: var(--radius-lg);
+      padding: 30px 36px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      position: relative;
+    }
+    .summary-mascot-nudge {
+      position: absolute;
+      top: -30px;
+      right: 36px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #FFF;
+      padding: 6px 16px 6px 6px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-warm);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .summary-mascot-nudge img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .summary-mascot-nudge span {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent-caramel);
+    }
+
+    .summary-left {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .summary-title {
+      font-family: var(--font-title);
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .summary-items-text {
+      font-size: 15px;
+      color: var(--text-body);
+    }
+    .summary-right {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .total-price-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      text-align: right;
+    }
+    .total-price-val {
+      font-family: var(--font-title);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--accent-caramel);
+      letter-spacing: -0.02em;
+    }
+
+    /* 4. Craftsmanship Section */
+    .craft-section {
+      padding: 76px 0;
+      background-color: var(--bg-cream);
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .craft-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .craft-card {
+      background: #FFF;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 36px 28px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.25s ease;
+    }
+    .craft-card:hover {
+      transform: translateY(-4px);
+    }
+    .craft-icon {
+      font-size: 32px;
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+    .craft-card h3 {
+      font-family: var(--font-title);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 10px;
+    }
+    .craft-card p {
+      font-size: 15px;
+      color: var(--text-body);
+      line-height: 1.65;
+    }
+
+    /* 5. Kakao Order Guide Box */
+    .order-guide-section {
+      padding: 72px 0;
+      background-color: var(--bg-canvas);
+    }
+    .guide-box {
+      background: linear-gradient(135deg, #33241C 0%, #463428 100%);
+      border-radius: var(--radius-lg);
+      padding: 52px;
+      color: #F8F1EA;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 40px;
+      align-items: center;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+    .guide-left h2 {
+      font-family: var(--font-title);
+      font-size: 30px;
+      font-weight: 700;
+      color: #FFF;
+      margin-bottom: 14px;
+    }
+    .guide-left p {
+      font-size: 16px;
+      color: #E2D3C7;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .guide-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .guide-step-item {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      font-size: 15px;
+      color: #EFE6DC;
+    }
+    .step-number {
+      font-family: var(--font-title);
+      font-weight: 700;
+      color: #FFDE7D;
+      font-size: 17px;
+      flex-shrink: 0;
+    }
+    .guide-right {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+      padding: 36px 28px;
+      border-radius: var(--radius-md);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .guide-mascot-character {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      border: 3px solid #FFF;
+      object-fit: cover;
+      margin-bottom: 16px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+      animation: gentleBounce 3.5s ease-in-out infinite;
+    }
+    .guide-right-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: #FFF;
+      margin-bottom: 6px;
+    }
+    .guide-right-sub {
+      font-size: 14px;
+      color: #C8B7A9;
+      margin-bottom: 22px;
+    }
+
+    /* 6. Footer */
+    .site-footer {
+      background-color: #241A15;
+      color: #B5A497;
+      padding: 72px 0 40px;
+      margin-top: auto;
+      border-top: 1px solid #362820;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 52px;
+    }
+    .footer-col-brand .footer-brand-title {
+      font-family: var(--font-title);
+      font-size: 24px;
+      font-weight: 700;
+      color: #FFF;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .footer-brand-title img {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .footer-col-brand p {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #9C897D;
+      margin-bottom: 20px;
+      max-width: 290px;
+    }
+    .footer-social-links {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #E2D3C7;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 9px 16px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      transition: all 0.2s ease;
+    }
+    .social-btn:hover {
+      background: rgba(255, 255, 255, 0.18);
+      color: #FFF;
+      border-color: rgba(255, 255, 255, 0.35);
+      transform: translateY(-2px);
+    }
+
+    .footer-heading {
+      font-size: 15px;
+      font-weight: 700;
+      color: #FFF;
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+    }
+    .footer-info-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      font-size: 15px;
+    }
+    .footer-info-list li {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .footer-info-label {
+      font-size: 13px;
+      color: #8C786C;
+      font-weight: 500;
+    }
+    .footer-info-value {
+      color: #EAE0D6;
+      font-weight: 500;
+    }
+
+    .footer-bottom-bar {
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 14px;
+      color: #7D6B60;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    /* Modal Dialog */
+    .modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(24, 16, 12, 0.72);
+      backdrop-filter: blur(6px);
+      z-index: 200;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-backdrop.open {
+      display: flex;
+    }
+    .modal-box {
+      background: #FFF;
+      width: 100%;
+      max-width: 500px;
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-lg);
+      border: 1px solid var(--border-subtle);
+      position: relative;
+      animation: modalSlideUp 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes modalSlideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .modal-close-btn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 22px;
+      color: var(--text-muted);
+      cursor: pointer;
+      line-height: 1;
+      padding: 6px;
+    }
+    .modal-close-btn:hover {
+      color: var(--text-main);
+    }
+    .modal-header-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    .modal-mascot-img {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+    .modal-title {
+      font-family: var(--font-title);
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .modal-subtitle {
+      font-size: 15px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      line-height: 1.55;
+    }
+    .modal-order-text {
+      width: 100%;
+      min-height: 130px;
+      background-color: var(--bg-canvas);
+      border: 1px solid var(--border-warm);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      font-family: var(--font-soft);
+      font-size: 14px;
+      color: var(--text-main);
+      line-height: 1.65;
+      resize: none;
+      margin-bottom: 22px;
+    }
+    .modal-btn-row {
+      display: flex;
+      gap: 12px;
+    }
+
+    /* Toast Notification */
+    .toast-container {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 999;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      pointer-events: none;
+    }
+    .toast {
+      background-color: #2D201A;
+      color: #FFF;
+      padding: 14px 22px;
+      border-radius: var(--radius-pill);
+      font-size: 15px;
+      font-weight: 500;
+      box-shadow: var(--shadow-lg);
+      border-left: 5px solid var(--accent-honey);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      transform: translateY(24px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: auto;
+    }
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .craft-grid {
+        grid-template-columns: 1fr;
+      }
+      .guide-box {
+        grid-template-columns: 1fr;
+        padding: 36px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
+      }
+      .intro-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 32px 24px;
+      }
+      .intro-mascot-spot {
+        order: -1;
+      }
+      .products-grid {
+        grid-template-columns: 1fr;
+        max-width: 440px;
+        margin: 0 auto;
+      }
+      .order-summary-box {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 24px;
+      }
+      .summary-mascot-nudge {
+        position: static;
+        margin-bottom: 8px;
+        align-self: flex-start;
+      }
+      .summary-right {
+        justify-content: space-between;
+        width: 100%;
+      }
+      .fullwidth-hero {
+        min-height: 480px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-bottom-bar {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <span class="announcement-badge">당일 배송</span>
+    <span>매일 아침 갓 구워낸 마토공방 시그니처 수제 쿠키 · 전국 우체국 신선 택배 & 매장 픽업</span>
+  </div>
+
+  <!-- Header Navigation -->
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="#hero-banner" class="brand-logo" title="마토공방 홈으로 이동">
+        <div class="mascot-avatar-small">
+          <img src="./images/mato_character.jpg" alt="마토공방 빵 캐릭터 마토" />
+        </div>
+        <div class="brand-text-col">
+          <span class="brand-title">마토공방</span>
+          <span class="brand-tagline-sub">HANDMADE COOKIE ATELIER</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" aria-label="메인 메뉴">
+        <a href="#hero-banner" class="nav-link">홈</a>
+        <a href="#products" class="nav-link">대표 쿠키</a>
+        <a href="#brand-story" class="nav-link">공방 원칙</a>
+        <a href="#order-guide" class="nav-link">주문 방법</a>
+        <a href="#store-info" class="nav-link">매장 & 연락처</a>
+      </nav>
+
+      <div class="header-cta-group">
+        <button type="button" onclick="openKakaoOrderModal()" class="btn btn-kakao" title="카카오톡 채널로 주문하기">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 3C6.477 3 2 6.477 2 10.767c0 2.766 1.87 5.187 4.673 6.516-.205.76-.74 2.747-.847 3.167-.132.522.192.515.405.374.168-.112 2.668-1.815 3.738-2.545.66.096 1.336.147 2.031.147 5.523 0 10-3.477 10-7.767C22 6.477 17.523 3 12 3z"/>
+          </svg>
+          <span>주문하기</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Full-Width Hero Section -->
+  <section id="hero-banner" class="fullwidth-hero">
+    <img 
+      src="./images/fullwidth_hero.jpg" 
+      alt="마토공방 따뜻한 베이커리 전경과 갓 구운 수제 쿠키" 
+      class="fullwidth-hero-bg" 
+      onerror="this.src='./images/cookie_hero.jpg';"
+    />
+    <div class="fullwidth-hero-overlay"></div>
+
+    <div class="fullwidth-hero-container">
+      <div class="hero-mascot-pill">
+        <img src="./images/mato_character.jpg" alt="마토 셰프 캐릭터" />
+        <span>마토 셰프가 오늘 아침 오븐을 활짝 열었어요!</span>
+      </div>
+
+      <h1 class="fullwidth-hero-title">
+        매일 아침 구워 <mark>당일 배송</mark>합니다
+      </h1>
+
+      <p class="fullwidth-hero-sub">
+        프랑스산 최고급 AOP 발효버터와 유기농 원재료로 매일 아침 구워내는 마토공방의 따끈따끈한 시그니처 수제 쿠키를 가장 신선한 상태로 문 앞까지 전해드립니다.
+      </p>
+
+      <div class="hero-action-row">
+        <a href="#products" class="btn btn-white">
+          <span>대표 쿠키 3종 보기</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </a>
+        <button type="button" onclick="openKakaoOrderModal()" class="btn btn-kakao">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 3C6.477 3 2 6.477 2 10.767c0 2.766 1.87 5.187 4.673 6.516-.205.76-.74 2.747-.847 3.167-.132.522.192.515.405.374.168-.112 2.668-1.815 3.738-2.545.66.096 1.336.147 2.031.147 5.523 0 10-3.477 10-7.767C22 6.477 17.523 3 12 3z"/>
+          </svg>
+          <span>카카오톡으로 주문하기</span>
+        </button>
+      </div>
+
+      <div class="hero-trust-strip">
+        <div class="trust-strip-item">
+          <span>📦</span>
+          <span>오전 11시 전 주문 시 당일 출고</span>
+        </div>
+        <div class="trust-strip-item"><span>·</span></div>
+        <div class="trust-strip-item">
+          <span>📮</span>
+          <span>우체국 신선 익일 배송</span>
+        </div>
+        <div class="trust-strip-item"><span>·</span></div>
+        <div class="trust-strip-item">
+          <span>🛡️</span>
+          <span>개별 실링 안심 완충 포장</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand Intro & Mascot Greeting Section -->
+  <section class="brand-intro-section" id="brand-story">
+    <div class="container">
+      <div class="intro-card">
+        <div>
+          <div class="intro-kicker">ABOUT MATO ATELIER</div>
+          <h2 class="intro-title">마토공방, 좋은 재료로 빚은 정직한 온기</h2>
+          <p class="intro-text">
+            마토공방은 인공 첨가물이나 보존제를 일절 사용하지 않고, 오직 순수한 천연 발효버터와 유기농 밀, 엄선된 견과류로 정성을 담아 만듭니다. 바쁜 일상 속, 한 조각의 쿠키가 선사하는 깊은 풍미와 기분 좋은 달콤함을 느껴보세요.
+          </p>
+        </div>
+        <div class="intro-mascot-spot">
+          <img src="./images/mato_character.jpg" alt="마토 캐릭터" class="intro-mascot-img" />
+          <span class="intro-mascot-label">공방 마스코트 '마토'</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Section: 3 Cookie Cards with Hover Lift -->
+  <section id="products" class="products-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-kicker">SIGNATURE COLLECTION</div>
+        <h2 class="section-title">마토공방 대표 수제 쿠키 3종</h2>
+        <p class="section-desc">
+          마토 셰프가 추천하는 시그니처 3종을 소개합니다. 카드를 둘러보고 원하는 수량을 선택해 보세요.
+        </p>
+      </div>
+
+      <div class="products-grid">
+        <!-- 1. 초코칩 쿠키 -->
+        <article class="product-card" id="card-chocochip">
+          <div class="card-media-wrapper">
+            <div class="card-mascot-stamp">
+              <img src="./images/mato_character.jpg" alt="마토 추천" />
+              <span>마토 Pick!</span>
+            </div>
+            <span class="card-flavor-tag">시그니처 베스트</span>
+            <img 
+              src="./images/cookie_chocochip.jpg" 
+              alt="마토공방 초코칩 쿠키" 
+              loading="lazy"
+              referrerpolicy="no-referrer"
+              onerror="this.src='./images/cookie_hero.jpg';"
+            />
+          </div>
+          <div class="card-body">
+            <div>
+              <div class="card-sub-category">Classic Levain</div>
+              <div class="card-title-row">
+                <h3 class="card-title">초코칩 쿠키</h3>
+                <div class="card-price tabular-nums">3,800<small>원</small></div>
+              </div>
+              <p class="card-desc">
+                프랑스 발로나 다크 초콜릿(62%) 청크와 볶은 호두를 아낌없이 가득 채워, 겉은 바삭하고 속은 촉촉하게 쫀득한 마토공방의 대표 시그니처 르뱅 쿠키입니다.
+              </p>
+            </div>
+
+            <div>
+              <div class="card-ingredients">
+                <strong>주재료:</strong> 프랑스 발효버터, 발로나 다크 62%, 캘리포니아 호두, 유기농 밀가루
+              </div>
+
+              <div class="card-actions">
+                <div class="qty-control" aria-label="초코칩 쿠키 수량 선택">
+                  <button type="button" class="qty-btn" onclick="changeQty('chocochip', -1)">-</button>
+                  <span class="qty-value tabular-nums" id="qty-chocochip">1</span>
+                  <button type="button" class="qty-btn" onclick="changeQty('chocochip', 1)">+</button>
+                </div>
+                <button type="button" class="btn-card-order" onclick="orderSingleCookie('초코칩 쿠키', 3800, 'chocochip')">
+                  주문하기
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 2. 말차 쿠키 -->
+        <article class="product-card" id="card-matcha">
+          <div class="card-media-wrapper">
+            <div class="card-mascot-stamp">
+              <img src="./images/mato_character.jpg" alt="말차 마토" />
+              <span>진한 말차 풍미</span>
+            </div>
+            <span class="card-flavor-tag">프리미엄 티 컬렉션</span>
+            <img 
+              src="./images/cookie_matcha.jpg" 
+              alt="마토공방 말차 쿠키" 
+              loading="lazy"
+              referrerpolicy="no-referrer"
+              onerror="this.src='./images/cookie_hero.jpg';"
+            />
+          </div>
+          <div class="card-body">
+            <div>
+              <div class="card-sub-category">Jeju Organic Matcha</div>
+              <div class="card-title-row">
+                <h3 class="card-title">말차 쿠키</h3>
+                <div class="card-price tabular-nums">4,200<small>원</small></div>
+              </div>
+              <p class="card-desc">
+                100% 제주 유기농 어린잎 말차의 그윽하고 쌉싸름한 풍미에 벨기에 칼리바우트 화이트 초콜릿의 부드러움과 통 마카다미아의 고소함이 조화로운 쿠키입니다.
+              </p>
+            </div>
+
+            <div>
+              <div class="card-ingredients">
+                <strong>주재료:</strong> 제주 유기농 말차, 칼리바우트 화이트 초콜릿, 통 마카다미아
+              </div>
+
+              <div class="card-actions">
+                <div class="qty-control" aria-label="말차 쿠키 수량 선택">
+                  <button type="button" class="qty-btn" onclick="changeQty('matcha', -1)">-</button>
+                  <span class="qty-value tabular-nums" id="qty-matcha">1</span>
+                  <button type="button" class="qty-btn" onclick="changeQty('matcha', 1)">+</button>
+                </div>
+                <button type="button" class="btn-card-order" onclick="orderSingleCookie('말차 쿠키', 4200, 'matcha')">
+                  주문하기
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- 3. 솔티드 캐러멜 쿠키 -->
+        <article class="product-card" id="card-caramel">
+          <div class="card-media-wrapper">
+            <div class="card-mascot-stamp">
+              <img src="./images/mato_character.jpg" alt="단짠 마토" />
+              <span>환상의 단짠</span>
+            </div>
+            <span class="card-flavor-tag">셰프 스페셜</span>
+            <img 
+              src="./images/cookie_caramel.jpg" 
+              alt="마토공방 솔티드 캐러멜 쿠키" 
+              loading="lazy"
+              referrerpolicy="no-referrer"
+              onerror="this.src='./images/cookie_hero.jpg';"
+            />
+          </div>
+          <div class="card-body">
+            <div>
+              <div class="card-sub-category">Artisan Salted Caramel</div>
+              <div class="card-title-row">
+                <h3 class="card-title">솔티드 캐러멜 쿠키</h3>
+                <div class="card-price tabular-nums">4,000<small>원</small></div>
+              </div>
+              <p class="card-desc">
+                공방에서 매일 천천히 끓여낸 수제 생캐러멜 소스와 바삭하게 구운 피칸, 영국 왕실 말돈 소금이 만들어내는 중독적인 감미로움의 정점입니다.
+              </p>
+            </div>
+
+            <div>
+              <div class="card-ingredients">
+                <strong>주재료:</strong> 수제 생캐러멜 소스, 영국 말돈 소금, 로스팅 피칸, 프랑스 고메 버터
+              </div>
+
+              <div class="card-actions">
+                <div class="qty-control" aria-label="솔티드 캐러멜 쿠키 수량 선택">
+                  <button type="button" class="qty-btn" onclick="changeQty('caramel', -1)">-</button>
+                  <span class="qty-value tabular-nums" id="qty-caramel">1</span>
+                  <button type="button" class="qty-btn" onclick="changeQty('caramel', 1)">+</button>
+                </div>
+                <button type="button" class="btn-card-order" onclick="orderSingleCookie('솔티드 캐러멜 쿠키', 4000, 'caramel')">
+                  주문하기
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Live Order Basket & Total Calculator -->
+  <section class="quick-order-section">
+    <div class="container">
+      <div class="order-summary-box">
+        <div class="summary-mascot-nudge">
+          <img src="./images/mato_character.jpg" alt="마토 캐릭터" />
+          <span>마토가 주문서를 꼼꼼히 정리해 드릴게요!</span>
+        </div>
+
+        <div class="summary-left">
+          <div class="summary-title">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="9" cy="21" r="1"></circle>
+              <circle cx="20" cy="21" r="1"></circle>
+              <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+            </svg>
+            <span>실시간 주문서 요약</span>
+          </div>
+          <div class="summary-items-text" id="summary-items-desc">
+            선택된 수량: 초코칩 1개 · 말차 1개 · 솔티드 캐러멜 1개 (총 3개)
+          </div>
+        </div>
+
+        <div class="summary-right">
+          <div>
+            <div class="total-price-label">예상 결제 금액</div>
+            <div class="total-price-val tabular-nums" id="summary-total-price">12,000원</div>
+          </div>
+          <button type="button" onclick="openKakaoOrderModal()" class="btn btn-kakao">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 3C6.477 3 2 6.477 2 10.767c0 2.766 1.87 5.187 4.673 6.516-.205.76-.74 2.747-.847 3.167-.132.522.192.515.405.374.168-.112 2.668-1.815 3.738-2.545.66.096 1.336.147 2.031.147 5.523 0 10-3.477 10-7.767C22 6.477 17.523 3 12 3z"/>
+            </svg>
+            <span>카카오톡으로 주문하기</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Craftsmanship Section -->
+  <section class="craft-section">
+    <div class="container">
+      <div class="section-header" style="margin-bottom: 40px;">
+        <div class="section-kicker">MATO QUALITY</div>
+        <h2 class="section-title">좋은 쿠키를 향한 고집스러운 원칙</h2>
+        <p class="section-desc">소중한 사람과 함께 나누고 싶은 건강하고 맛있는 디저트를 만듭니다.</p>
+      </div>
+
+      <div class="craft-grid">
+        <div class="craft-card">
+          <div class="craft-icon">🧈</div>
+          <h3>프랑스 AOP 고메 버터</h3>
+          <p>전통 방식으로 유산균을 발효시켜 굽는 순간 오븐 가득 짙고 향긋한 천연 버터 향미를 피워냅니다.</p>
+        </div>
+
+        <div class="craft-card">
+          <div class="craft-icon">🍪</div>
+          <h3>매일 아침 당일 구움</h3>
+          <p>미리 구워두지 않고 매일 새벽 반죽을 숙성하여 아침에 갓 구워낸 가장 바삭하고 쫀득한 쿠키만 전달합니다.</p>
+        </div>
+
+        <div class="craft-card">
+          <div class="craft-icon">🌿</div>
+          <h3>화학 보존료 무첨가</h3>
+          <p>유화제, 합성 착색료, 인공 보존제 없이 자연에서 온 깨끗한 유기농 식재료 본연의 맛을 지켜냅니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Order Guide Section with Cheering Mascot -->
+  <section id="order-guide" class="order-guide-section">
+    <div class="container">
+      <div class="guide-box">
+        <div class="guide-left">
+          <h2>카카오톡으로 1분 만에 끝내는 간편 주문</h2>
+          <p>
+            매일 아침 한정 수량으로 구워내어 신선도가 남다릅니다. 원하시는 쿠키 수량을 선택하시고 카카오톡 채널로 편안하게 주문해 주세요.
+          </p>
+          <div class="guide-steps">
+            <div class="guide-step-item">
+              <span class="step-number">01.</span>
+              <span>원하는 대표 쿠키와 수량을 선택 후 '주문하기'를 누릅니다.</span>
+            </div>
+            <div class="guide-step-item">
+              <span class="step-number">02.</span>
+              <span>자동 생성된 주문서를 복사하고 카카오톡 채팅창으로 이동합니다.</span>
+            </div>
+            <div class="guide-step-item">
+              <span class="step-number">03.</span>
+              <span>채팅창에 붙여넣어 주시면 상담원이 배송 일정을 바로 친절히 안내드립니다.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-right">
+          <img src="./images/mato_character.jpg" alt="마토 캐릭터 응원" class="guide-mascot-character" />
+          <div class="guide-right-title">카카오톡 채널: @마토공방</div>
+          <div class="guide-right-sub">평일/주말 10:00 - 20:00 실시간 상담</div>
+          <button type="button" onclick="openKakaoOrderModal()" class="btn btn-kakao" style="width: 100%;">
+            <span>카카오톡 채널 바로가기</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section (Operating Hours, Contacts, Instagram) -->
+  <footer id="store-info" class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col-brand">
+          <div class="footer-brand-title">
+            <img src="./images/mato_character.jpg" alt="마토공방" />
+            <span>마토공방 (MATO)</span>
+          </div>
+          <p>
+            매일 아침 오븐을 켜고 좋은 재료로 정성을 다해 구워 당일 배송하는 수제 쿠키 전문 공방입니다.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://instagram.com/mato_bakery" target="_blank" rel="noopener noreferrer" class="social-btn" title="인스타그램 새 창 열기">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+              <span>@mato_bakery</span>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">운영 시간</h4>
+          <ul class="footer-info-list">
+            <li>
+              <span class="footer-info-label">화요일 — 일요일</span>
+              <span class="footer-info-value">11:00 — 20:00</span>
+            </li>
+            <li>
+              <span class="footer-info-label">정기 휴무</span>
+              <span class="footer-info-value">매주 월요일</span>
+            </li>
+            <li>
+              <span class="footer-info-label">안내 사항</span>
+              <span class="footer-info-value">당일 생산 수량 소진 시 조기 마감</span>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">연락처 & 상담</h4>
+          <ul class="footer-info-list">
+            <li>
+              <span class="footer-info-label">매장 전화번호</span>
+              <span class="footer-info-value"><a href="tel:02-588-1204" style="text-decoration: underline;">02-588-1204</a></span>
+            </li>
+            <li>
+              <span class="footer-info-label">주문 상담 모바일</span>
+              <span class="footer-info-value"><a href="tel:010-8204-1204" style="text-decoration: underline;">010-8204-1204</a></span>
+            </li>
+            <li>
+              <span class="footer-info-label">카카오톡 채널</span>
+              <span class="footer-info-value">
+                <a href="https://pf.kakao.com/" target="_blank" rel="noopener noreferrer" style="color: #FEE500; font-weight: 600;">@마토공방</a>
+              </span>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">매장 위치</h4>
+          <ul class="footer-info-list">
+            <li>
+              <span class="footer-info-label">주소</span>
+              <span class="footer-info-value">서울특별시 마포구 동교로 24길 18 1층</span>
+            </li>
+            <li>
+              <span class="footer-info-label">오시는 길</span>
+              <span class="footer-info-value">홍대입구역 1번 출구 도보 5분</span>
+            </li>
+            <li>
+              <span class="footer-info-label">배송 안내</span>
+              <span class="footer-info-value">전국 우체국 익일 신선 택배 발송</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>
+          &copy; <span id="current-year">2026</span> 마토공방 (MATO Atelier). All rights reserved.
+        </div>
+        <div>
+          대표자: 김마토 · 사업자등록번호: 105-82-41204 · 통신판매업신고 완료
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive KakaoTalk Order Modal Dialog -->
+  <div class="modal-backdrop" id="orderModal" onclick="handleBackdropClick(event)">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button type="button" class="modal-close-btn" onclick="closeOrderModal()" aria-label="닫기">✕</button>
+      <div class="modal-header-row">
+        <img src="./images/mato_character.jpg" alt="마토 셰프" class="modal-mascot-img" />
+        <div>
+          <h3 class="modal-title" id="modalTitle">카카오톡 간편 주문</h3>
+        </div>
+      </div>
+      <p class="modal-subtitle">
+        생성된 주문서 양식을 복사하신 후, 카카오톡 채널 채팅창에 붙여넣어 주시면 상담원이 빠르게 접수해 드립니다.
+      </p>
+
+      <label for="orderTextarea" style="font-size: 13px; font-weight: 600; color: var(--text-muted); display: block; margin-bottom: 6px;">
+        주문서 내용 미리보기:
+      </label>
+      <textarea id="orderTextarea" class="modal-order-text" readonly></textarea>
+
+      <div class="modal-btn-row">
+        <button type="button" onclick="copyOrderText()" class="btn btn-outline" style="flex: 1;">
+          주문서 복사하기
+        </button>
+        <button type="button" onclick="proceedToKakao()" class="btn btn-kakao" style="flex: 1.2;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 3C6.477 3 2 6.477 2 10.767c0 2.766 1.87 5.187 4.673 6.516-.205.76-.74 2.747-.847 3.167-.132.522.192.515.405.374.168-.112 2.668-1.815 3.738-2.545.66.096 1.336.147 2.031.147 5.523 0 10-3.477 10-7.767C22 6.477 17.523 3 12 3z"/>
+          </svg>
+          <span>카카오톡 채널 이동</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <!-- Pure Vanilla JavaScript -->
+  <script>
+    // State
+    const cookieData = {
+      chocochip: { name: '초코칩 쿠키', price: 3800, qty: 1 },
+      matcha: { name: '말차 쿠키', price: 4200, qty: 1 },
+      caramel: { name: '솔티드 캐러멜 쿠키', price: 4000, qty: 1 }
+    };
+
+    // KakaoTalk Channel URL
+    const KAKAO_CHANNEL_URL = 'https://pf.kakao.com/';
+
+    // Update Year
+    const yearEl = document.getElementById('current-year');
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
+
+    // Change Quantity
+    function changeQty(key, delta) {
+      if (!cookieData[key]) return;
+      const nextQty = Math.max(0, cookieData[key].qty + delta);
+      cookieData[key].qty = nextQty;
+      
+      const qtyElem = document.getElementById('qty-' + key);
+      if (qtyElem) {
+        qtyElem.textContent = nextQty;
+      }
+      updateOrderSummary();
+    }
+
+    // Format currency in Korean Won
+    function formatWon(num) {
+      return num.toLocaleString('ko-KR') + '원';
+    }
+
+    // Update Live Order Summary Bar
+    function updateOrderSummary() {
+      let totalQty = 0;
+      let totalPrice = 0;
+      const itemsList = [];
+
+      for (const [key, item] of Object.entries(cookieData)) {
+        if (item.qty > 0) {
+          totalQty += item.qty;
+          totalPrice += item.price * item.qty;
+          itemsList.push(`${item.name} ${item.qty}개`);
+        }
+      }
+
+      const descElem = document.getElementById('summary-items-desc');
+      const totalElem = document.getElementById('summary-total-price');
+
+      if (totalQty === 0) {
+        if (descElem) descElem.textContent = '원하시는 수량을 선택해주세요 (수량 0개)';
+        if (totalElem) totalElem.textContent = '0원';
+      } else {
+        if (descElem) descElem.textContent = `선택된 수량: ${itemsList.join(' · ')} (총 ${totalQty}개)`;
+        if (totalElem) totalElem.textContent = formatWon(totalPrice);
+      }
+    }
+
+    // Generate Order Text for KakaoTalk
+    function generateOrderSummaryText() {
+      const items = [];
+      let total = 0;
+      for (const [key, item] of Object.entries(cookieData)) {
+        if (item.qty > 0) {
+          items.push(`- ${item.name} : ${item.qty}개 (${formatWon(item.price * item.qty)})`);
+          total += item.price * item.qty;
+        }
+      }
+
+      if (items.length === 0) {
+        return `[마토공방 수제 쿠키 주문 문의]\n\n안녕하세요! 매일 아침 구워 당일 배송하는 마토공방 쿠키 주문 문의드립니다.\n- 희망 쿠키: 초코칩 쿠키 1개\n- 수령 방식: 당일 택배 배송 / 매장 픽업\n- 성함 / 연락처: \n- 배송지 주소 또는 픽업 희망 시간: `;
+      }
+
+      return `[마토공방 수제 쿠키 당일 주문서]\n\n안녕하세요 마토공방님! 아래와 같이 주문합니다.\n\n${items.join('\n')}\n총 주문 금액: ${formatWon(total)}\n\n- 수령 방식: (당일 택배 배송 / 매장 픽업)\n- 주문자 성함: \n- 연락처: \n- 받으실 주소 (또는 픽업 희망 일시): `;
+    }
+
+    // Order Single Item directly
+    function orderSingleCookie(name, price, key) {
+      if (cookieData[key].qty === 0) {
+        cookieData[key].qty = 1;
+        const qtyElem = document.getElementById('qty-' + key);
+        if (qtyElem) qtyElem.textContent = 1;
+        updateOrderSummary();
+      }
+      openKakaoOrderModal();
+    }
+
+    // Modal Handlers
+    function openKakaoOrderModal() {
+      const textarea = document.getElementById('orderTextarea');
+      if (textarea) {
+        textarea.value = generateOrderSummaryText();
+      }
+      const modal = document.getElementById('orderModal');
+      if (modal) {
+        modal.classList.add('open');
+      }
+    }
+
+    function closeOrderModal() {
+      const modal = document.getElementById('orderModal');
+      if (modal) {
+        modal.classList.remove('open');
+      }
+    }
+
+    function handleBackdropClick(e) {
+      if (e.target && e.target.id === 'orderModal') {
+        closeOrderModal();
+      }
+    }
+
+    // Copy Order Text
+    function copyOrderText() {
+      const textarea = document.getElementById('orderTextarea');
+      if (!textarea) return;
+
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(textarea.value).then(() => {
+          showToast('주문서가 복사되었습니다! 카카오톡에 붙여넣어 주세요 🍪');
+        }).catch(() => {
+          fallbackCopyText(textarea);
+        });
+      } else {
+        fallbackCopyText(textarea);
+      }
+    }
+
+    function fallbackCopyText(textarea) {
+      textarea.select();
+      textarea.setSelectionRange(0, 99999);
+      try {
+        document.execCommand('copy');
+        showToast('주문서가 복사되었습니다! 카카오톡에 붙여넣어 주세요 🍪');
+      } catch (err) {
+        showToast('텍스트를 직접 길게 눌러 복사해주세요.');
+      }
+    }
+
+    // Proceed to KakaoTalk
+    function proceedToKakao() {
+      copyOrderText();
+      setTimeout(() => {
+        window.open(KAKAO_CHANNEL_URL, '_blank', 'noopener,noreferrer');
+      }, 300);
+    }
+
+    // Toast Notification Display
+    function showToast(message) {
+      const container = document.getElementById('toastContainer');
+      if (!container) return;
+
+      const toast = document.createElement('div');
+      toast.className = 'toast';
+      toast.innerHTML = `
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFDE7D" stroke-width="2">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        <span>${message}</span>
+      `;
+      container.appendChild(toast);
+
+      requestAnimationFrame(() => {
+        toast.classList.add('show');
+      });
+
+      setTimeout(() => {
+        toast.classList.remove('show');
+        setTimeout(() => {
+          if (toast.parentNode) {
+            toast.parentNode.removeChild(toast);
+          }
+        }, 300);
+      }, 3500);
+    }
+
+    // Keyboard accessibility (ESC to close modal)
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeOrderModal();
+      }
+    });
+
+    // Initialize summary on page load
+    updateOrderSummary();
+  </script>
+</body>
+</html>
